@@ -6,6 +6,8 @@ var roundQuestion= "";
 var cache = 5;
 var calls = 0;
 var genreArray;
+var questionArray;
+var groupObjectArray;
 
 function randomGenreNoRpt () {
 //define array:
@@ -17,13 +19,29 @@ groupGenre = genreArray.pop();
 oddGenre = genreArray.pop();
 }
 
+function randomGroupObjective () {
+//define array:
+groupObjectArray = ["Bake a birthday cake","Decide on a restaurant to eat at","Change a flat tire","Keep the surprise party secret by any means necessary","Give the cat a bath"];
+ //shuffle array:
+groupObjectArray.sort(function(){return Math.round(Math.random());});	
+groupObjective = groupObjectArray.pop();
+}
+
+function randomQuestion () {
+//define array:
+questionArray = ["If your life were a movie, what genre would it be?","How did your genre affect your interpretation of events?","How do genres create expectations and ways of thinking?","What are some other systems that affect the way that we think?","Do the rules we are thinking with affect what possible conclusions we draw?"];
+ //shuffle array:
+questionArray.sort(function(){return Math.round(Math.random());});	
+roundQuestion = questionArray.pop();
+}
+
 function rollRound() {
 	randomGenreNoRpt();
     // groupGenre= "Romantic Comedy";
     // oddGenre= "Horror";
-    groupObjective= "Bake a birthday cake";
+randomGroupObjective();
     secretObjective= "Make sure that none of the other players gets suffers bodily injury";
-    roundQuestion= "If your life were a movie, what genre would it be?";
+	randomQuestion();
     
     document.getElementById("GroupGenre").innerHTML = "Group Genre: "+ groupGenre;
     document.getElementById("OddGenre").innerHTML = "Odd Genre Out: "+ oddGenre;
