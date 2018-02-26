@@ -8,6 +8,11 @@ var calls = 0;
 var genreArray;
 var questionArray;
 var groupObjectArray;
+var oddHorrorArray;
+var oddRomanceArray;
+var oddSciFiArray;
+var oddComedyArray;
+var oddDocArray;
 
 function randomGenreNoRpt () {
 //define array:
@@ -35,12 +40,44 @@ questionArray.sort(function(){return Math.round(Math.random());});
 roundQuestion = questionArray.pop();
 }
 
+function randomOddObjective (){
+oddHorrorArray = ["Make sure that none of the other players suffers bodily injury", "horror-b", "horror-c","horror-d", "horror-e"];
+oddRomanceArray = ["Be a matchmaker: Try to make sure all other characters are paired off by the end of the scene", "Try to fall in love with one of the other characters.", "horror-c", "horror-d", "horror-e"];
+oddSciFiArray = ["scifi-a","scifi-b","scifi-c","scifi-d","scifi-e"];
+oddComedyArray = ["com-a", "com-b", "com-c", "com-d", "com-e"];
+oddDocArray = ["doc-a", "doc-b", "doc-c", "doc-d", "doc-e"];
+
+oddHorrorArray.sort(function(){return Math.round(Math.random());});	
+oddRomanceArray.sort(function(){return Math.round(Math.random());});	
+oddSciFiArray.sort(function(){return Math.round(Math.random());});	
+oddComedyArray.sort(function(){return Math.round(Math.random());});	
+oddDocArray.sort(function(){return Math.round(Math.random());});	
+
+if (oddGenre == "Horror") {
+//if the odd genre is horror
+secretObjective = oddHorrorArray.pop();
+} else if (oddGenre == "Romance") {
+
+//if the odd genre is romance
+secretObjective = oddRomanceArray.pop();
+} else if (oddGenre == "Science Fiction") {
+//if the odd genre is scifi
+secretObjective = oddSciFiArray.pop();
+} else if (oddGenre == "Comedy") {
+//if the odd genre is comedy
+secretObjective = oddComedyArray.pop();
+} else if (oddGenre == "Documentary") {
+//if the odd genre is documentary
+secretObjective = oddDocArray.pop();
+} else {
+	secretObjective = "You have no direction in life. This is an error message."
+}
+}
+
 function rollRound() {
 	randomGenreNoRpt();
-    // groupGenre= "Romantic Comedy";
-    // oddGenre= "Horror";
-randomGroupObjective();
-    secretObjective= "Make sure that none of the other players gets suffers bodily injury";
+	randomGroupObjective();
+   	randomOddObjective();
 	randomQuestion();
     
     document.getElementById("GroupGenre").innerHTML = "Group Genre: "+ groupGenre;
