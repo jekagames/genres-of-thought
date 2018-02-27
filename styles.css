@@ -8,9 +8,9 @@ body
 	font-family: 'Alegreya Sans SC', sans-serif;
 	font-size: 24px;
 	color: #7ECC31;
-	margin-top: 200px;
-	margin-left: 250px;
-	line-height: 1.1;
+	margin-top: 50px;
+	margin-left: 50px;
+	line-height: 1.05;
 
 }
 
@@ -44,7 +44,7 @@ list-style-type: none;
 #container
 {
 	position: relative;
-	left: 100px;
-	top: 50px;
-	width: 60%;
+	left: 30px;
+	top: 30px;
+	width: 80%;
 }

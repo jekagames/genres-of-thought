@@ -16,7 +16,7 @@ var oddDocArray;
 
 function randomGenreNoRpt () {
 //define array:
-genreArray = ["Romantic","Comedy","Horror","Documentary","Science Fiction"];
+genreArray = ["Romance","Comedy","Horror","Documentary","Science Fiction"];
  //shuffle array:
 genreArray.sort(function(){return Math.round(Math.random());});	
 
@@ -34,14 +34,14 @@ groupObjective = groupObjectArray.pop();
 
 function randomQuestion () {
 //define array:
-questionArray = ["If your life were a movie, what genre would it be?","How did your genre affect your interpretation of events?","How do genres create expectations and ways of thinking?","What are some other systems that affect the way that we think?","Do the rules we are thinking with affect what possible conclusions we draw?"];
+questionArray = ["If your life were a movie, what genre would it be?","How did your genre affect your interpretation of events?","How do genres create expectations and ways of thinking?","What are some other systems (like genres) that affect the way that we think?","Do the rules we are thinking with affect what possible conclusions we draw?"];
  //shuffle array:
 questionArray.sort(function(){return Math.round(Math.random());});	
 roundQuestion = questionArray.pop();
 }
 
 function randomOddObjective (){
-oddHorrorArray = ["Make sure that none of the other players suffers bodily injury", "horror-b", "horror-c","horror-d", "horror-e"];
+oddHorrorArray = ["Make sure that none of the other players suffers bodily injury", "Convince the other players to split up.", "horror-c","horror-d", "horror-e"];
 oddRomanceArray = ["Be a matchmaker: Try to make sure all other characters are paired off by the end of the scene", "Try to fall in love with one of the other characters.", "horror-c", "horror-d", "horror-e"];
 oddSciFiArray = ["scifi-a","scifi-b","scifi-c","scifi-d","scifi-e"];
 oddComedyArray = ["com-a", "com-b", "com-c", "com-d", "com-e"];
@@ -57,7 +57,6 @@ if (oddGenre == "Horror") {
 //if the odd genre is horror
 secretObjective = oddHorrorArray.pop();
 } else if (oddGenre == "Romance") {
-
 //if the odd genre is romance
 secretObjective = oddRomanceArray.pop();
 } else if (oddGenre == "Science Fiction") {
@@ -81,10 +80,10 @@ function rollRound() {
 	randomQuestion();
     
     document.getElementById("GroupGenre").innerHTML = "Group Genre: "+ groupGenre;
-    document.getElementById("OddGenre").innerHTML = "Odd Genre Out: "+ oddGenre;
     document.getElementById("GroupObjective").innerHTML = "Group Objective: " + groupObjective;
-    document.getElementById("SecretObjective").innerHTML = "Odd Genre Out's Secret Objective: " + secretObjective;
-    document.getElementById("RoundQuestion").innerHTML = "The Question To Ask at the End of this Round: " + roundQuestion;
+    document.getElementById("OddGenre").innerHTML = "Odd Genre Out: "+ oddGenre;
+    document.getElementById("SecretObjective").innerHTML = "Odd Genre Secret Objective: " + secretObjective;
+    document.getElementById("RoundQuestion").innerHTML = "The Prompt: " + roundQuestion;
 }
 
 
