@@ -13,10 +13,14 @@ var oddRomanceArray;
 var oddSciFiArray;
 var oddComedyArray;
 var oddDocArray;
+var oddActionArray;
+var oddMystArray;
+var oddFanArray;
+var oddWestArray;
 
 function randomGenreNoRpt () {
 //define array:
-genreArray = ["Romance","Comedy","Horror","Documentary","Science Fiction"];
+genreArray = ["Romance","Comedy","Horror","Documentary","Science Fiction", "Action", "Mystery", "Fantasy", "Western"];
  //shuffle array:
 genreArray.sort(function(){return Math.round(Math.random());});	
 
@@ -46,12 +50,21 @@ oddRomanceArray = ["Be a matchmaker: Try to make sure all other characters are p
 oddSciFiArray = ["scifi-a","scifi-b","scifi-c","scifi-d","scifi-e"];
 oddComedyArray = ["com-a", "com-b", "com-c", "com-d", "com-e"];
 oddDocArray = ["doc-a", "doc-b", "doc-c", "doc-d", "doc-e"];
+oddActionArray = ["act-a", "act-b", "act-c", "act-d", "act-e"];
+oddMystArray = ["myst-a", "myst-b", "myst-c", "myst-d", "myst-e"];
+oddFanArray = ["fan-a", "fan-b", "fan-c", "fan-d", "fan-e"];
+oddWestArray = ["west-a", "west-b", "west-c", "west-d", "west-e"];
+
 
 oddHorrorArray.sort(function(){return Math.round(Math.random());});	
 oddRomanceArray.sort(function(){return Math.round(Math.random());});	
 oddSciFiArray.sort(function(){return Math.round(Math.random());});	
 oddComedyArray.sort(function(){return Math.round(Math.random());});	
 oddDocArray.sort(function(){return Math.round(Math.random());});	
+oddActionArray.sort(function(){return Math.round(Math.random());});
+oddMystArray.sort(function(){return Math.round(Math.random());});
+oddFanArray.sort(function(){return Math.round(Math.random());});
+oddWestArray.sort(function(){return Math.round(Math.random());});
 
 if (oddGenre == "Horror") {
 //if the odd genre is horror
@@ -66,6 +79,18 @@ secretObjective = oddSciFiArray.pop();
 //if the odd genre is comedy
 secretObjective = oddComedyArray.pop();
 } else if (oddGenre == "Documentary") {
+//if the odd genre is documentary
+secretObjective = oddDocArray.pop();
+} else if (oddGenre == "Action") {
+//if the odd genre is documentary
+secretObjective = oddDocArray.pop();
+} else if (oddGenre == "Mystery") {
+//if the odd genre is documentary
+secretObjective = oddDocArray.pop();
+} else if (oddGenre == "Fantasy") {
+//if the odd genre is documentary
+secretObjective = oddDocArray.pop();
+} else if (oddGenre == "Western") {
 //if the odd genre is documentary
 secretObjective = oddDocArray.pop();
 } else {
