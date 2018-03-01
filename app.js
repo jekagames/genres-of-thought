@@ -25,8 +25,8 @@ genreArray = ["Romance","Comedy","Horror","Documentary","Science Fiction", "Acti
  //shuffle array:
 genreArray.sort(function(){return Math.round(Math.random());});	
 
-groupGenre = genreArray.pop();
-oddGenre = genreArray.pop();
+// groupGenre = genreArray.pop();
+// oddGenre = genreArray.pop();
 }
 
 function randomGroupObjective () {
@@ -34,7 +34,7 @@ function randomGroupObjective () {
 groupObjectArray = ["Bake a birthday cake.","Decide on a restaurant to eat at.","Change a flat tire.","Keep the surprise party secret by any means necessary.","Give the cat a bath.", "Put together a tent for your campsite.", "Build a snowman together.", "Host a Potluck.", "Dig for hidden treasure!", "Paint your friend's bedroom.", "Build a rooms' worth of flat-pack furniture (i.e. Ikea).", "Form a sweet garage band.", "You are the customers and a teller at a bank.", "Find your way through a hall of funhouse mirrors.", "Take a drive together down a gravel-paved country road.", "Work on your final projects for chemistry class."];
  //shuffle array:
 groupObjectArray.sort(function(){return Math.round(Math.random());});	
-groupObjective = groupObjectArray.pop();
+// groupObjective = groupObjectArray.pop();
 }
 
 function randomQuestion () {
@@ -42,7 +42,7 @@ function randomQuestion () {
 questionArray = ["If your life were a movie, what genre would it be?","How did your genre affect your interpretation of events?","How do genres create expectations and ways of thinking?","What are some other systems (like genres) that affect the way that we think?", "Do the rules we are thinking with affect what possible conclusions we draw?", "How do our ways of thinking change in different contexts in our daily lives?", "What is something that you used to think or believe that you don't anymore? Is there a reason why that's the case?", "When provided with the same evidence, different people might draw very different conclusions. Why do you think that is?"];
  //shuffle array:
 questionArray.sort(function(){return Math.round(Math.random());});	
-roundQuestion = questionArray.pop();
+// roundQuestion = questionArray.pop();
 }
 
 function randomOddObjective (){
@@ -57,7 +57,6 @@ oddFanArray = ["Ride a dragon everywhere you go in this scene.", "Your talking s
 oddWestArray = ["You have a pistol and can do impressive trick shots with it - trace your bullets' trajectories through the scene and have them solve otherwise unwieldly problems.", "One of the characters in this here scene has a price on their head, and you have come to collect the bounty.", "You believe that you and the others are part of a Train Robbery Gang ala Butch Cassidy & the Sundance Kid -- while working on the group task, outline your plan to rob the train.", "Give the other characters their Old West nicknames as soon as possible and refer to them only by these names throughout the scene."];
 oddMusicArray = ["Whenever you are inspired during this scene, burst into a topical song.", "Find rhythmic uses for your hands, feet, and other body parts, encourage other characters to join you.", "Say, 'That sounds like a song!' to other characters, and encourage them to sing.", "Perform task-appropriate dance choreography.", "Be the back-up singer to another character, softly repeating the words they say as a song."];
 
-
 oddHorrorArray.sort(function(){return Math.round(Math.random());});	
 oddRomanceArray.sort(function(){return Math.round(Math.random());});	
 oddSciFiArray.sort(function(){return Math.round(Math.random());});	
@@ -68,6 +67,52 @@ oddMystArray.sort(function(){return Math.round(Math.random());});
 oddFanArray.sort(function(){return Math.round(Math.random());});
 oddWestArray.sort(function(){return Math.round(Math.random());});
 oddMusicArray.sort(function(){return Math.round(Math.random());});
+
+// if (oddGenre == "Horror") {
+// //if the odd genre is horror
+// secretObjective = oddHorrorArray.pop();
+// } else if (oddGenre == "Romance") {
+// //if the odd genre is romance
+// secretObjective = oddRomanceArray.pop();
+// } else if (oddGenre == "Science Fiction") {
+// //if the odd genre is scifi
+// secretObjective = oddSciFiArray.pop();
+// } else if (oddGenre == "Comedy") {
+// //if the odd genre is comedy
+// secretObjective = oddComedyArray.pop();
+// } else if (oddGenre == "Documentary") {
+// //if the odd genre is documentary
+// secretObjective = oddDocArray.pop();
+// } else if (oddGenre == "Action") {
+// //if the odd genre is action
+// secretObjective = oddActionArray.pop();
+// } else if (oddGenre == "Mystery") {
+// //if the odd genre is mystery
+// secretObjective = oddMystArray.pop();
+// } else if (oddGenre == "Fantasy") {
+// //if the odd genre is fantasy
+// secretObjective = oddFanArray.pop();
+// } else if (oddGenre == "Western") {
+// //if the odd genre is western
+// secretObjective = oddWestArray.pop();
+// } else if (oddGenre == "Musical") {
+// //if the odd genre is musical
+// secretObjective = oddMusicArray.pop();
+// } else {
+// 	secretObjective = "You have no direction in life. This is an error message."
+// }
+}
+
+function rollRound() {
+	randomGenreNoRpt();
+	randomGroupObjective();
+   	randomOddObjective();
+	randomQuestion();
+
+roundQuestion = questionArray.pop();
+groupObjective = groupObjectArray.pop();
+groupGenre = genreArray.pop();
+oddGenre = genreArray.pop();
 
 if (oddGenre == "Horror") {
 //if the odd genre is horror
@@ -102,19 +147,13 @@ secretObjective = oddMusicArray.pop();
 } else {
 	secretObjective = "You have no direction in life. This is an error message."
 }
-}
-
-function rollRound() {
-	randomGenreNoRpt();
-	randomGroupObjective();
-   	randomOddObjective();
-	randomQuestion();
     
     document.getElementById("GroupGenre").innerHTML = "Group Genre: "+ groupGenre;
     document.getElementById("GroupObjective").innerHTML = "Group Objective: " + groupObjective;
     document.getElementById("OddGenre").innerHTML = "Odd Genre Out: "+ oddGenre;
     document.getElementById("SecretObjective").innerHTML = "Odd Genre Secret Objective: " + secretObjective;
     document.getElementById("RoundQuestion").innerHTML = "The Prompt: " + roundQuestion;
+
 }
 
 
