@@ -31,7 +31,7 @@ oddGenre = genreArray.pop();
 
 function randomGroupObjective () {
 //define array:
-groupObjectArray = ["Bake a birthday cake","Decide on a restaurant to eat at","Change a flat tire","Keep the surprise party secret by any means necessary","Give the cat a bath", ""];
+groupObjectArray = ["Bake a birthday cake.","Decide on a restaurant to eat at.","Change a flat tire.","Keep the surprise party secret by any means necessary.","Give the cat a bath.", "Put together a tent for your campsite.", "Build a snowman together.", "Host a Potluck.", "Dig for hidden treasure!", "Paint your friend's bedroom.", "Build a rooms' worth of flat-pack furniture (i.e. Ikea).", "Form a sweet garage band.", "You are the customers and a teller at a bank.", "Find your way through a hall of funhouse mirrors.", "Take a drive together down a gravel-paved country road.", "Work on your final projects for chemistry class."];
  //shuffle array:
 groupObjectArray.sort(function(){return Math.round(Math.random());});	
 groupObjective = groupObjectArray.pop();
